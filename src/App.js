@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import AddPlayerForm from './Component/AddPlayerForm'
+import Header from './Component/Header'
+import {Route} from "react-router-dom";
+import EditPlayerFrom from './Component/EditPlayerForm';
+import SearchPlayerForm from './Component/SearchPlayerForm';
+import Home from './Component/Home';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header />
+      <Route path="/home">
+        <Home />
+      </Route>
+      <Route path="/add">
+      <AddPlayerForm />
+      </Route>
+      <Route path="/edit">
+      <EditPlayerFrom />
+      </Route>
+      <Route path="/search">
+      <SearchPlayerForm />
+      </Route>
+
     </div>
   );
 }
